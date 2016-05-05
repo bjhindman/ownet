@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <SchemaVersion>2.0</SchemaVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>ownet</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ownet</RootNamespace>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <ProjectGuid>{001C1000-4AAB-47CF-9278-CD7EE46CA6D5}</ProjectGuid>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>.\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>168,162</NoWarn>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>.\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib">
+      <Name>mscorlib</Name>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Design">
+      <Name>System.Design</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Management">
+      <Name>System.Management</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.Xml</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="com\dalsemi\onewire\adapter\AdapterEnumerator.cs" />
+    <Compile Include="com\dalsemi\onewire\adapter\DotNetAdapterx64.cs" />
+    <Compile Include="com\dalsemi\onewire\adapter\DotNetAdapterx86.cs" />
+    <Compile Include="com\dalsemi\onewire\adapter\DSPortAdapter.cs" />
+    <Compile Include="com\dalsemi\onewire\adapter\DumbAdapter.cs" />
+    <Compile Include="com\dalsemi\onewire\adapter\OneWireIOException.cs" />
+    <Compile Include="com\dalsemi\onewire\container\ADContainer.cs" />
+    <Compile Include="com\dalsemi\onewire\container\ClockContainer.cs" />
+    <Compile Include="com\dalsemi\onewire\container\HumidityContainer.cs" />
+    <Compile Include="com\dalsemi\onewire\container\MemoryBank.cs" />
+    <Compile Include="com\dalsemi\onewire\container\MemoryBankAD.cs" />
+    <Compile Include="com\dalsemi\onewire\container\MemoryBankAppReg.cs" />
+    <Compile Include="com\dalsemi\onewire\container\MemoryBankEE.cs" />
+    <Compile Include="com\dalsemi\onewire\container\MemoryBankEEPROM.cs" />
+    <Compile Include="com\dalsemi\onewire\container\MemoryBankEEPROMblock.cs" />
+    <Compile Include="com\dalsemi\onewire\container\MemoryBankEEPROMstatus.cs" />
+    <Compile Include="com\dalsemi\onewire\container\MemoryBankEPROM.cs" />
+    <Compile Include="com\dalsemi\onewire\container\MemoryBankNV.cs" />
+    <Compile Include="com\dalsemi\onewire\container\MemoryBankNVCRC.cs" />
+    <Compile Include="com\dalsemi\onewire\container\MemoryBankNVCRCPW.cs" />
+    <Compile Include="com\dalsemi\onewire\container\MemoryBankSBM.cs" />
+    <Compile Include="com\dalsemi\onewire\container\MemoryBankScratch.cs" />
+    <Compile Include="com\dalsemi\onewire\container\MemoryBankScratchCRC.cs" />
+    <Compile Include="com\dalsemi\onewire\container\MemoryBankScratchCRCPW.cs" />
+    <Compile Include="com\dalsemi\onewire\container\MemoryBankScratchEE.cs" />
+    <Compile Include="com\dalsemi\onewire\container\MemoryBankScratchEx.cs" />
+    <Compile Include="com\dalsemi\onewire\container\MemoryBankScratchSHA.cs" />
+    <Compile Include="com\dalsemi\onewire\container\MemoryBankScratchSHAEE.cs" />
+    <Compile Include="com\dalsemi\onewire\container\MemoryBankScratchTemp.cs" />
+    <Compile Include="com\dalsemi\onewire\container\MemoryBankSHAEE.cs" />
+    <Compile Include="com\dalsemi\onewire\container\MissionContainer.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OneWireContainer.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OneWireContainer01.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OneWireContainer02.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OneWireContainer04.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OneWireContainer05.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OneWireContainer06.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OneWireContainer08.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OneWireContainer09.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OneWireContainer0A.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OneWireContainer0B.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OneWireContainer0C.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OneWireContainer0F.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OneWireContainer10.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OneWireContainer12.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OneWireContainer13.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OneWireContainer14.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OneWireContainer18.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OneWireContainer1A.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OneWireContainer1C.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OneWireContainer1D.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OneWireContainer1F.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OneWireContainer20.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OneWireContainer21.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="com\dalsemi\onewire\container\OneWireContainer22.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OneWireContainer23.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OneWireContainer24.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OneWireContainer26.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OneWireContainer27.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OneWireContainer28.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OneWireContainer29.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OneWireContainer2C.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OneWireContainer2D.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OneWireContainer30.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OneWireContainer33.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OneWireContainer37.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OneWireContainer3A.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OneWireContainer41.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OneWireContainer42.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OneWireContainer43.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OneWireSensor.cs" />
+    <Compile Include="com\dalsemi\onewire\container\OTPMemoryBank.cs" />
+    <Compile Include="com\dalsemi\onewire\container\PagedMemoryBank.cs" />
+    <Compile Include="com\dalsemi\onewire\container\PasswordContainer.cs" />
+    <Compile Include="com\dalsemi\onewire\container\PotentiometerContainer.cs" />
+    <Compile Include="com\dalsemi\onewire\container\ScratchPad.cs" />
+    <Compile Include="com\dalsemi\onewire\container\SwitchContainer.cs" />
+    <Compile Include="com\dalsemi\onewire\container\TemperatureContainer.cs" />
+    <Compile Include="com\dalsemi\onewire\debug\Debug.cs" />
+    <Compile Include="com\dalsemi\onewire\OneWireAccessProvider.cs" />
+    <Compile Include="com\dalsemi\onewire\OneWireException.cs" />
+    <Compile Include="com\dalsemi\onewire\Properties.cs" />
+    <Compile Include="com\dalsemi\onewire\utils\Address.cs" />
+    <Compile Include="com\dalsemi\onewire\utils\Bit.cs" />
+    <Compile Include="com\dalsemi\onewire\utils\Convert.cs" />
+    <Compile Include="com\dalsemi\onewire\utils\CRC16.cs" />
+    <Compile Include="com\dalsemi\onewire\utils\CRC8.cs" />
+    <Compile Include="com\dalsemi\onewire\utils\IOHelper.cs" />
+    <Compile Include="com\dalsemi\onewire\utils\OWPath.cs" />
+    <Compile Include="com\dalsemi\onewire\utils\OWPathElement.cs" />
+    <Compile Include="com\dalsemi\onewire\utils\SHA.cs" />
+    <Compile Include="SupportClass.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <None Include="_ConversionReport.htm">
+      <SubType>Preview</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

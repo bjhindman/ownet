@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<project name="HygroChronViewer" default="build">
+    <property name="basename" value="HygroChronViewer"/>
+    <property name="debug" value="true"/>
+    <property name="NOW" 
+        value="${datetime::get-day(datetime::now())}${datetime::get-month(datetime::now())}${datetime::get-year(datetime::now())}" />
+    <property name="version" value="1.02"/>
+    <property name="pkg_dir" value="${basename}-${version}-${NOW}"/>
+
+    <fileset id="SOURCE">
+      <include name="*.cs"/>
+    </fileset>
+
+    <fileset id="SOURCE_TMP">
+      <include name="tmp/*.cs"/>
+    </fileset>
+
+    <fileset id="RESOURCES">
+        <include name="*.resx"/>
+        <include name="app.ico"/>
+    </fileset>
+
+    <fileset id="LIBS">
+        <include name="System.dll" />
+        <include name="System.Data.dll" />
+        <include name="System.Drawing.dll" />
+        <include name="System.Windows.Forms.dll" />
+        <include name="System.Xml.dll" />
+        <include name="vjslib.dll" />
+        <include name="lib/OneWireAPI.NET.dll" />
+        <include name="vendor/NPlot.dll" />
+    </fileset>
+
+    <target name="clean">
+        <delete dir="bin"/>
+        <delete dir="tmp"/>
+        <delete dir="${pkg_dir}"/>
+    </target>
+
+    <target name="build">
+        <mkdir dir="bin" />
+        <mkdir dir="tmp" />
+        <copy todir="tmp">
+           <fileset refid="SOURCE"/>
+           <filterchain>
+               <replacetokens>
+                    <token key="AUTOVERSION" value="${version}" />
+               </replacetokens>
+           </filterchain>
+        </copy>
+        <csc target="exe" output="bin/${basename}.exe" debug="${debug}" win32icon="App.ico">
+            <sources refid="SOURCE_TMP"/>
+            <resources refid="RESOURCES"/>
+            <references refid="LIBS"/>
+        </csc>
+        <copy todir="bin" flatten="true">
+            <fileset refid="LIBS"/>
+        </copy>
+    </target>
+
+    <target name="run" depends="build">
+        <exec program="bin/${basename}.exe" basedir=".">
+        </exec>
+    </target>
+    
+    <target name="release" depends="build">
+        <mkdir dir="${pkg_dir}"/>
+        <copy todir="${pkg_dir}" flatten="true">
+            <fileset>
+                <include name="readme.txt"/>
+            </fileset>
+        </copy>
+        <mkdir dir="${pkg_dir}/bin"/>
+        <copy todir="${pkg_dir}/bin" flatten="true">
+            <fileset>
+                <include name="bin/*.*"/>
+            </fileset>
+        </copy>
+        <mkdir dir="${pkg_dir}/src"/>
+        <copy todir="${pkg_dir}/src" flatten="true">
+            <fileset refid="SOURCE_TMP"/>
+        </copy>
+        <copy todir="${pkg_dir}/src">
+            <fileset refid="RESOURCES"/>
+        </copy>
+        <copy todir="${pkg_dir}/src">
+            <fileset refid="LIBS"/>
+        </copy>
+        <copy todir="${pkg_dir}/src">
+            <fileset>
+                <include name="HygroChronViewer.build"/>
+                <include name="HygroChronViewer.sln"/>
+                <include name="HygroChronViewer.csproj"/>
+                <include name="app.config"/>
+                <include name="App.ico"/>
+            </fileset>
+        </copy>
+        
+        <zip zipfile="${pkg_dir}.zip">
+            <fileset basedir="${pkg_dir}">
+                <include name="**/*" />
+            </fileset>
+        </zip>
+    </target>
+</project>

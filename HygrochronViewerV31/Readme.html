@@ -1,0 +1,202 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=us-ascii">
+<meta name=Generator content="Microsoft Word 11 (filtered)">
+<title>HygrochronViewer.exe Readme</title>
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:blue;
+	text-decoration:underline;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=blue>
+
+<div class=Section1>
+
+<p class=MsoNormal><b><span style='font-size:10.0pt;font-family:Arial'>&#8220;HygrochronViewer.exe&#8221;
+Readme<br>
+<br>
+Introduction</span></b><span style='font-size:10.0pt;font-family:Arial'><br>
+&#8220;HygrochronViewer.exe&#8221; is a GUI Demo app for exercising DS1923
+Hygrochron <u>i</u>Buttons, DS1922L/T/E Thermochron <u>i</u>Buttons, and DS2422
+data logger chips.&nbsp; This application supports starting and stopping
+missions, analyzing mission results from temperature and humidity (or as
+integer data values in the case of the DS2422), and saving those results to
+.csv file for use in Microsoft Excel or other spreadsheet applications.</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'><br>
+This particular example was written in Microsoft C# through Visual Studio .NET
+2005.</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:10.0pt;font-family:Arial'>Requirements</span></b><span
+style='font-size:10.0pt;font-family:Arial'><br>
+<a href="http://www.maxim-ic.com/1-wiredrivers">1-Wire Drivers</a> version 4.03
+or higher, with the ownet.dll and NPlot.dll in the same directory as the
+executable.</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>.NET
+Framework 2.0 Redistributable:</span></p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'><a
+     href="http://www.microsoft.com/downloads/details.aspx?FamilyID=0856eacb-4362-4b0d-8edd-aab15c5e04f5"
+     id="ctl00_mainContentContainer_ctl03">Download x86 version</a> </span></li>
+ <li class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'><a
+     href="http://www.microsoft.com/downloads/details.aspx?FamilyID=b44a0000-acf8-4fa1-affb-40e78d788b00"
+     id="ctl00_mainContentContainer_ctl04">Download x64 version</a> </span></li>
+</ul>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'><br>
+When compiling this program, make sure that the program references ownet.dll
+and NPlot.dll.&nbsp; NPlot.dll is a 3rd-party chart-plotting .NET library used
+for temp/humidity graphs.&nbsp;The source to it is available for
+download:&nbsp; <a href="http://www.nplot.com">http://www.nplot.com</a>.</span></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt'><span style='font-size:10.0pt;
+font-family:Arial'><br>
+<b>Operation</b><br>
+After installing the prerequisites listed above, double-click the
+HygrochronViewer.exe file to start the application. Under the File menu, select
+the 1-Wire adapter submenu and select your 1-Wire adapter and port combination.&nbsp;
+The status bar will display the adapter and port you selected if it was
+successful in opening the port.<br>
+<br>
+<b>Revision History</b><br>
+1.00 - First release.</span></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt'><span style='font-size:10.0pt;
+font-family:Arial'>2.00 - Second release.&nbsp; Moved from using .NET Framework
+version 1.1 to 2.0.&nbsp; Compiled as <br>
+an &quot;AnyCPU&quot; build (both x86 and x64).</span></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt'><span style='font-size:10.0pt;
+font-family:Arial'>3.00 - Third release.&nbsp; Got rid of dependencies on J#.
+It is now completely a C# program. Many bugs were fixed.&nbsp; An &#8220;Auto-Detect&#8221;
+feature was added (for 1-Wire adapter). Also added was support for the DS9481
+1-Wire adapter.&nbsp; </span></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt'><span style='font-size:10.0pt;
+font-family:Arial'>3.1 &#8211; Updated the ownet.dll to support more
+1-Wire/iButon devices.</span></p>
+
+<p><b><span style='font-size:10.0pt;font-family:Arial'>Files</span></b></p>
+
+<p><span style='font-size:10.0pt;font-family:"Courier New"'>app.config&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+- &nbsp;XML configuration file for application</span></p>
+
+<p><span style='font-size:10.0pt;font-family:"Courier New"'>app.ico&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-
+&nbsp;Icon for executable</span></p>
+
+<p><span style='font-size:10.0pt;font-family:"Courier New"'>AssemblyInfo.cs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;- &nbsp;C# assembly info file</span></p>
+
+<p><span style='font-size:10.0pt;font-family:"Courier New"'>DevicePasswordForm.cs&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+-&nbsp; C# form to handle passwords</span></p>
+
+<p><span style='font-size:10.0pt;font-family:"Courier New"'>DevicePasswordForm.resx
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+-&nbsp; .NET managed resource file</span></p>
+
+<p><span style='font-size:10.0pt;font-family:"Courier New"'>HygrochronViewer.build&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+-&nbsp; optional nant build file</span></p>
+
+<p><span style='font-size:10.0pt;font-family:"Courier New"'>HygrochronViewer.cs&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+-&nbsp; Visual C# source file</span></p>
+
+<p><span style='font-size:10.0pt;font-family:"Courier New"'>HygrochronViewer.csproj
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;-&nbsp; Visual C# project file</span></p>
+
+<p><span style='font-size:10.0pt;font-family:"Courier New"'>HygrochronViewer.csproj.user&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp; Visual Studio Project User Options
+file</span></p>
+
+<p><span style='font-size:10.0pt;font-family:"Courier New"'>HygrochronViewer.resx&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+-&nbsp; .NET managed resource file</span></p>
+
+<p><span style='font-size:10.0pt;font-family:"Courier New"'>HygrochronViewer.sln&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+-&nbsp; Visual Studio Solution file</span></p>
+
+<p><span style='font-size:10.0pt;font-family:"Courier New"'>HygrochronViewer.suo&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;-&nbsp; Visual Studio Solution User Options</span></p>
+
+<p><span style='font-size:10.0pt;font-family:"Courier New"'>Readme.html
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+-&nbsp; This file</span></p>
+
+<p><span style='font-size:10.0pt;font-family:"Courier New"'>StartMissionForm.cs&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+-&nbsp; Visual C# source file</span></p>
+
+<p><span style='font-size:10.0pt;font-family:"Courier New"'>StartMissionForm.resx&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;-&nbsp; .NET managed resource file</span></p>
+
+<p><span style='font-size:10.0pt;font-family:"Courier New"'>TemperatureCompensationOptions.cs&nbsp;&nbsp;
+-&nbsp; Visual C# source file</span></p>
+
+<p><span style='font-size:10.0pt;font-family:"Courier New"'>TemperatureCompensationOptions.resx
+&nbsp;- &nbsp;NET managed resource file</span></p>
+
+<p><span style='font-size:10.0pt;font-family:"Courier New"'>.\vendor\NPlot-license.txt&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp; license for NPlot.dll</span></p>
+
+<p><span style='font-size:10.0pt;font-family:"Courier New"'>.\vendor\NPlot.dll&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+-&nbsp; .NET graphing library </span></p>
+
+<p><span style='font-size:10.0pt;font-family:"Courier New"'>.\lib\ownet.dll &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp;
+1-Wire API </span></p>
+
+<p><span style='font-size:10.0pt;font-family:"Courier New"'>.\bin\Debug\HygrochronViewer.exe&nbsp;&nbsp;&nbsp;&nbsp;
+-&nbsp; program executable.<br>
+&nbsp; </span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>
