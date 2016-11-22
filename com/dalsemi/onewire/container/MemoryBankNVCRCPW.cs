@@ -365,7 +365,7 @@ namespace com.dalsemi.onewire.container
 				}
 				else if ((i == (pgs - 1)) && (bytesLeftover != 0))
 				{
-					Array.Copy(raw_buf, 0, readBuf, (offset + (pageLength - startOffset) + ((i - 1) * pageLength)), bytesLeftover);
+					Array.Copy(raw_buf, 0, readBuf, (offset + (pageLength - startOffset) + ((i - 1) * pageLength)), startOffset);
 				}
 				else
 				{
